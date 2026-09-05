@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vlad's DogT ($SUNSHINE) — Sunshine, the rescue Lab mix</title>
+  <meta name="description" content="Sunshine, Vlad Tenev’s rescue Lab mix, joins the family as a six-month-old companion. $SUNSHINE on Solana. Vlad's DogT." />
+  <meta property="og:title" content="Vlad's DogT ($SUNSHINE)" />
+  <meta property="og:description" content="Sunshine, Vlad Tenev’s rescue Lab mix, joins the family as a six-month-old companion." />
+  <meta property="og:image" content="banner.jpg" />
+  <meta name="theme-color" content="#0C1F14" />
+  <link rel="icon" href="logo.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Chewy&family=Fredoka:wght@400;500;600;700&family=Nunito:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: "#F8EED8",
+            fur: "#F0D09A",
+            gold: "#E8B45A",
+            sun: "#F5C84C",
+            blush: "#E8A090",
+            tongue: "#D4787A",
+            bark: "#3D2A1A",
+            moss: "#3D7A4A",
+            pine: "#1A3D28",
+            deep: "#07140C",
+            leaf: "#6BBF6A",
+          },
+          fontFamily: {
+            display: ['Chewy', 'cursive'],
+            cute: ['Fredoka', 'sans-serif'],
+            body: ['Nunito', 'sans-serif'],
+          },
+          boxShadow: {
+            paw: "0 10px 0 #1A3D28, 0 18px 40px rgba(0,0,0,0.35)",
+            tag: "0 6px 0 #3D2A1A, 0 14px 28px rgba(0,0,0,0.3)",
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    :root {
+      --cream: #F8EED8;
+      --fur: #F0D09A;
+      --gold: #E8B45A;
+      --sun: #F5C84C;
+      --blush: #E8A090;
+      --bark: #3D2A1A;
+      --moss: #3D7A4A;
+      --pine: #1A3D28;
+      --deep: #07140C;
+      --leaf: #6BBF6A;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: Nunito, sans-serif;
+      color: var(--cream);
+      background: var(--deep);
+      overflow-x: hidden;
+    }
+
+    .forest-bg {
+      position: fixed;
+      inset: 0;
+      z-index: -3;
+      background:
+        linear-gradient(180deg, rgba(7,20,12,0.78) 0%, rgba(12,32,20,0.52) 38%, rgba(7,20,12,0.88) 100%),
+        url("forest-bg.jpg") center / cover no-repeat fixed;
+    }
+
+    @media (max-width: 768px) {
+      .forest-bg { background-attachment: scroll; }
+    }
+
+    .paw-wash {
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      pointer-events: none;
+      opacity: 0.07;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'%3E%3Cg fill='%23F8EED8'%3E%3Cellipse cx='52' cy='48' rx='10' ry='14' transform='rotate(-18 52 48)'/%3E%3Cellipse cx='72' cy='38' rx='10' ry='14' transform='rotate(-4 72 38)'/%3E%3Cellipse cx='92' cy='46' rx='10' ry='14' transform='rotate(16 92 46)'/%3E%3Cellipse cx='108' cy='62' rx='8' ry='11' transform='rotate(32 108 62)'/%3E%3Cellipse cx='78' cy='78' rx='18' ry='16'/%3E%3C/g%3E%3C/svg%3E");
+      background-size: 180px 180px;
+    }
+
+    .grain {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      opacity: 0.16;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    ::-webkit-scrollbar { width: 10px; }
+    ::-webkit-scrollbar-track { background: #07140C; }
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(180deg, #E8B45A, #3D7A4A);
+      border-radius: 99px;
+      border: 2px solid #07140C;
+    }
+
+    .kennel {
+      background: linear-gradient(180deg, rgba(26,61,40,0.78), rgba(7,20,12,0.86));
+      border: 2px solid rgba(232,180,90,0.38);
+      box-shadow:
+        inset 0 1px 0 rgba(248,238,216,0.12),
+        0 18px 40px rgba(0,0,0,0.32);
+      backdrop-filter: blur(14px);
+    }
+
+    .sun-ring {
+      box-shadow:
+        0 0 0 6px rgba(232,180,90,0.55),
+        0 0 0 12px rgba(245,200,76,0.18),
+        0 0 48px rgba(245,200,76,0.45),
+        0 18px 40px rgba(0,0,0,0.4);
+    }
+
+    .sunburst {
+      position: absolute;
+      inset: -28px;
+      border-radius: 999px;
+      background: repeating-conic-gradient(
+        from 0deg,
+        rgba(245,200,76,0.55) 0deg 7deg,
+        rgba(248,238,216,0.08) 7deg 15deg
+      );
+      animation: spin 28s linear infinite;
+      z-index: -1;
+      filter: blur(0.2px);
+    }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .logo-bob { animation: bob 4.2s ease-in-out infinite; }
+    @keyframes bob {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .wiggle { animation: wiggle 2.4s ease-in-out infinite; }
+    @keyframes wiggle {
+      0%, 100% { transform: rotate(-3deg); }
+      50% { transform: rotate(3deg); }
+    }
+
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      animation: marquee 32s linear infinite;
+    }
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    .btn-buy {
+      background: linear-gradient(180deg, #F5C84C 0%, #E8B45A 48%, #C9922E 100%);
+      color: #3D2A1A;
+      box-shadow:
+        0 7px 0 #3D2A1A,
+        0 14px 28px rgba(0,0,0,0.28),
+        inset 0 2px 0 rgba(255,255,255,0.38);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .btn-buy:hover {
+      transform: translateY(-2px);
+      box-shadow:
+        0 9px 0 #3D2A1A,
+        0 18px 32px rgba(0,0,0,0.32),
+        inset 0 2px 0 rgba(255,255,255,0.45);
+    }
+    .btn-buy:active {
+      transform: translateY(5px);
+      box-shadow:
+        0 2px 0 #3D2A1A,
+        0 8px 16px rgba(0,0,0,0.25);
+    }
+
+    .btn-chart {
+      background: linear-gradient(180deg, #6BBF6A 0%, #3D7A4A 100%);
+      color: #F8EED8;
+      box-shadow:
+        0 7px 0 #1A3D28,
+        0 14px 28px rgba(0,0,0,0.28),
+        inset 0 2px 0 rgba(255,255,255,0.22);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .btn-chart:hover {
+      transform: translateY(-2px);
+      box-shadow:
+        0 9px 0 #1A3D28,
+        0 18px 32px rgba(0,0,0,0.32);
+    }
+    .btn-chart:active {
+      transform: translateY(5px);
+      box-shadow: 0 2px 0 #1A3D28;
+    }
+
+    .btn-copy {
+      background: linear-gradient(180deg, #F0D09A, #E8A090);
+      color: #3D2A1A;
+      box-shadow: 0 5px 0 #3D2A1A;
+      transition: transform 0.12s ease, box-shadow 0.12s ease;
+    }
+    .btn-copy:hover { transform: translateY(-1px); box-shadow: 0 6px 0 #3D2A1A; }
+    .btn-copy:active { transform: translateY(4px); box-shadow: 0 1px 0 #3D2A1A; }
+    .btn-copy.is-copied {
+      background: linear-gradient(180deg, #6BBF6A, #3D7A4A);
+      color: #F8EED8;
+    }
+
+    .collar-tag {
+      background:
+        radial-gradient(ellipse at 20% 0%, rgba(248,238,216,0.22), transparent 50%),
+        linear-gradient(180deg, #5a4030 0%, #3D2A1A 55%, #2a1c12 100%);
+      border: 3px solid #E8B45A;
+      box-shadow:
+        inset 0 1px 0 rgba(248,238,216,0.25),
+        0 10px 24px rgba(0,0,0,0.35);
+    }
+
+    .tennis {
+      width: 58px;
+      height: 58px;
+      border-radius: 999px;
+      background:
+        radial-gradient(circle at 32% 28%, #f7ffb0, #d4ea4a 46%, #9cc41a 100%);
+      box-shadow:
+        inset -8px -10px 14px rgba(0,0,0,0.18),
+        inset 4px 4px 8px rgba(255,255,255,0.35),
+        0 8px 0 #5a7a12;
+      color: #3D2A1A;
+      font-family: Fredoka, sans-serif;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      flex-shrink: 0;
+    }
+    .tennis::before,
+    .tennis::after {
+      content: "";
+      position: absolute;
+      width: 70%;
+      height: 70%;
+      border: 2px solid rgba(255,255,255,0.7);
+      border-radius: 999px;
+      border-left-color: transparent;
+      border-right-color: transparent;
+    }
+    .tennis::before { transform: rotate(35deg); }
+    .tennis::after { transform: rotate(-35deg); }
+
+    .nav-glass {
+      background: rgba(7,20,12,0.78);
+      border-bottom: 1px solid rgba(232,180,90,0.28);
+      backdrop-filter: blur(16px);
+    }
+
+    .hero-fade {
+      background:
+        linear-gradient(180deg, rgba(7,20,12,0.15) 0%, rgba(7,20,12,0.08) 40%, rgba(7,20,12,0.96) 100%);
+    }
+
+    .leaf {
+      position: fixed;
+      top: -40px;
+      z-index: 6;
+      pointer-events: none;
+      opacity: 0.7;
+      animation: fall linear infinite;
+      font-size: 18px;
+    }
+    @keyframes fall {
+      0% { transform: translateY(-8vh) rotate(0deg); opacity: 0; }
+      12% { opacity: 0.7; }
+      100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+    }
+
+    .firefly {
+      position: fixed;
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: #F5C84C;
+      box-shadow: 0 0 10px 4px rgba(245,200,76,0.7);
+      pointer-events: none;
+      z-index: 4;
+      animation: glow 3.4s ease-in-out infinite;
+    }
+    @keyframes glow {
+      0%, 100% { opacity: 0.15; transform: translateY(0); }
+      50% { opacity: 0.9; transform: translateY(-10px); }
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 28px;
+      left: 50%;
+      transform: translateX(-50%) translateY(20px);
+      background: linear-gradient(180deg, #F5C84C, #E8B45A);
+      color: #3D2A1A;
+      padding: 12px 22px;
+      border-radius: 999px;
+      font-family: Fredoka, sans-serif;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+      opacity: 0;
+      pointer-events: none;
+      z-index: 80;
+      transition: all 0.25s ease;
+    }
+    .toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    .chart-frame {
+      background: linear-gradient(180deg, #1A3D28, #07140C);
+      border: 3px solid #E8B45A;
+      box-shadow:
+        0 0 0 8px rgba(26,61,40,0.55),
+        0 28px 56px rgba(0,0,0,0.4);
+    }
+
+    .stamp {
+      border: 3px dashed rgba(232,180,90,0.55);
+      transform: rotate(-8deg);
+    }
+
+    .bone-divider {
+      height: 18px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='18' viewBox='0 0 80 18'%3E%3Cpath fill='%23E8B45A' d='M8 9a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm0 8a4 4 0 1 1 0-8 4 4 0 0 1 0 8zM72 9a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm0 8a4 4 0 1 1 0-8 4 4 0 0 1 0 8zM12 7h56v4H12z'/%3E%3C/svg%3E");
+      background-repeat: repeat-x;
+      background-position: center;
+      opacity: 0.7;
+    }
+
+    .social-chip {
+      background: rgba(7,20,12,0.7);
+      border: 2px solid rgba(232,180,90,0.45);
+      transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+    }
+    .social-chip:hover {
+      transform: translateY(-2px) rotate(-3deg);
+      background: rgba(232,180,90,0.18);
+      border-color: #F5C84C;
+    }
+
+    .nav-link { color: #F8EED8; }
+    .nav-link:hover { color: #F5C84C; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .sunburst, .logo-bob, .wiggle, .marquee-track, .leaf, .firefly { animation: none !important; }
+    }
+  </style>
+</head>
+<body class="font-body">
+  <div class="forest-bg"></div>
+  <div class="paw-wash"></div>
+  <div class="grain"></div>
+  <div id="leaves"></div>
+  <div id="fireflies"></div>
+  <div id="toast" class="toast">Copied to clipboard — good girl!</div>
+
+  <!-- MARQUEE -->
+  <div class="relative z-50 overflow-hidden border-b-2 border-gold/40" style="background: linear-gradient(90deg, #E8B45A, #F5C84C, #F0D09A, #E8B45A);">
+    <div class="marquee-track font-cute text-bark text-sm sm:text-base font-semibold py-2 tracking-wide">
+      <span class="mx-5">☀ $SUNSHINE</span>
+      <span class="mx-5">🐾 VLAD'S DOGT</span>
+      <span class="mx-5">Sunshine, Vlad Tenev’s rescue Lab mix, joins the family as a six-month-old companion</span>
+      <span class="mx-5">🦴 GOOD GIRL</span>
+      <span class="mx-5">☀ 6 MONTHS OLD</span>
+      <span class="mx-5">🐾 LAB MIX · FOREVER HOME</span>
+      <span class="mx-5">🦴 BUY $SUNSHINE ON SOLANA</span>
+      <span class="mx-5">☀ $SUNSHINE</span>
+      <span class="mx-5">🐾 VLAD'S DOGT</span>
+      <span class="mx-5">Sunshine, Vlad Tenev’s rescue Lab mix, joins the family as a six-month-old companion</span>
+      <span class="mx-5">🦴 GOOD GIRL</span>
+      <span class="mx-5">☀ 6 MONTHS OLD</span>
+      <span class="mx-5">🐾 LAB MIX · FOREVER HOME</span>
+      <span class="mx-5">🦴 BUY $SUNSHINE ON SOLANA</span>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <header class="nav-glass sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between gap-3">
+      <a href="#home" class="flex items-center gap-3 min-w-0">
+        <img src="logo.png" alt="Vlad's DogT logo" class="w-11 h-11 sm:w-12 sm:h-12 rounded-full object-cover sun-ring" />
+        <div class="leading-tight">
+          <div class="font-display text-gold text-xl sm:text-2xl tracking-wide">Vlad's DogT</div>
+          <div class="font-cute text-[11px] text-cream/70 tracking-[0.22em]">$SUNSHINE</div>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-6 text-sm font-cute font-semibold">
+        <a href="#about" class="nav-link transition">Meet Sunshine</a>
+        <a href="#howtobuy" class="nav-link transition">How to Buy</a>
+        <a href="#chart" class="nav-link transition">Chart</a>
+      </nav>
+
+      <div class="flex items-center gap-2">
+        <a href="https://t.me/VladDogSUNSHINE" target="_blank" rel="noopener noreferrer" class="social-chip p-1 rounded-full" title="Telegram">
+          <img src="tg.png" alt="Telegram" class="w-8 h-8 object-contain" />
+        </a>
+        <a href="https://x.com/VladDogSUNSHINE" target="_blank" rel="noopener noreferrer" class="social-chip p-1 rounded-xl" title="X / Twitter">
+          <img src="x.png" alt="X" class="w-8 h-8 object-cover rounded-lg" />
+        </a>
+        <a href="https://swap.pump.fun/?input=So11111111111111111111111111111111111111112&output=TBA" target="_blank" rel="noopener noreferrer"
+           class="btn-buy hidden sm:inline-flex font-cute font-bold text-sm px-4 py-2 rounded-2xl">
+          Buy Now
+        </a>
+        <button id="menuBtn" class="md:hidden w-10 h-10 rounded-xl border-2 border-gold/50 text-gold" aria-label="Open menu">☰</button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="hidden md:hidden px-4 pb-4 space-y-2 font-cute text-cream">
+      <a href="#about" class="block py-2">Meet Sunshine</a>
+      <a href="#howtobuy" class="block py-2">How to Buy</a>
+      <a href="#chart" class="block py-2">Chart</a>
+      <a href="https://swap.pump.fun/?input=So11111111111111111111111111111111111111112&output=TBA" target="_blank" rel="noopener noreferrer" class="block py-2 text-sun">Buy Now</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="home" class="relative">
+    <div class="relative h-[46vh] min-h-[240px] sm:h-[58vh] md:h-[64vh] overflow-hidden">
+      <img src="banner.jpg" alt="Sunshine lying in a golden meadow at sunset" class="w-full h-full object-cover object-[center_60%]" />
+      <div class="hero-fade absolute inset-0"></div>
+      <div class="absolute top-5 left-5 stamp font-cute text-[10px] sm:text-xs px-3 py-1.5 text-bark bg-sun/90 rounded-lg wiggle">
+        6 MONTHS OLD
+      </div>
+      <div class="absolute top-5 right-5 stamp font-cute text-[10px] sm:text-xs px-3 py-1.5 text-cream bg-moss/90 rounded-lg" style="transform: rotate(7deg);">
+        GOOD GIRL 🐾
+      </div>
+    </div>
+
+    <div class="relative -mt-24 sm:-mt-28 flex justify-center z-10">
+      <div class="relative logo-bob">
+        <div class="sunburst"></div>
+        <img src="logo.png" alt="Sunshine the Lab mix" class="relative w-36 h-36 sm:w-44 sm:h-44 md:w-52 md:h-52 rounded-full object-cover sun-ring" />
+      </div>
+    </div>
+
+    <div class="max-w-4xl mx-auto px-4 pt-8 pb-14 text-center">
+      <p class="font-cute text-sun tracking-[0.28em] text-xs sm:text-sm mb-3">RESCUE LAB MIX · SOLANA MEME</p>
+      <h1 class="font-display text-5xl sm:text-7xl md:text-8xl text-gold leading-none drop-shadow-[0_6px_0_#1A3D28]">
+        Vlad's DogT
+      </h1>
+      <p class="font-display text-3xl sm:text-4xl text-cream mt-2">$SUNSHINE</p>
+      <p class="mt-5 text-lg sm:text-xl text-cream/90 max-w-2xl mx-auto leading-relaxed">
+        Sunshine, Vlad Tenev’s rescue Lab mix, joins the family as a six-month-old companion —
+        big ears, pink tongue, and a forever home. The sunshine of the pack is now on-chain.
+      </p>
+
+      <!-- COLLAR CA -->
+      <div class="collar-tag max-w-2xl mx-auto mt-8 rounded-[2rem] px-4 py-4 sm:px-6 sm:py-5">
+        <div class="flex items-center justify-center gap-2 mb-3">
+          <span class="w-4 h-4 rounded-full bg-gold border-2 border-fur shadow-inner"></span>
+          <p class="font-cute text-gold text-xs tracking-[0.25em]">DOG TAG · CONTRACT ADDRESS</p>
+          <span class="w-4 h-4 rounded-full bg-gold border-2 border-fur shadow-inner"></span>
+        </div>
+        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+          <code id="ca-display" class="flex-1 bg-deep/70 border border-gold/30 rounded-2xl px-4 py-3 font-cute text-sun text-lg sm:text-xl break-all text-center select-all">TBA</code>
+          <button id="copy-ca" type="button" class="btn-copy font-cute font-bold px-5 py-3 rounded-2xl whitespace-nowrap">
+            Copy CA
+          </button>
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row gap-3 justify-center mt-6">
+        <a href="https://swap.pump.fun/?input=So11111111111111111111111111111111111111112&output=TBA" target="_blank" rel="noopener noreferrer"
+           class="btn-buy font-cute font-bold text-lg px-8 py-3.5 rounded-2xl inline-flex items-center justify-center gap-2">
+          ☀ Buy Now
+        </a>
+        <a href="https://dexscreener.com/robinhood/TBA" target="_blank" rel="noopener noreferrer"
+           class="btn-chart font-cute font-bold text-lg px-8 py-3.5 rounded-2xl inline-flex items-center justify-center gap-2">
+          📈 Chart
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div class="bone-divider max-w-5xl mx-auto my-2"></div>
+
+  <!-- ABOUT / MEET SUNSHINE -->
+  <section id="about" class="max-w-6xl mx-auto px-4 py-14 sm:py-20">
+    <div class="grid md:grid-cols-2 gap-8 items-center">
+      <div class="order-2 md:order-1 kennel rounded-[2rem] p-6 sm:p-8 relative">
+        <div class="absolute -top-3 left-6 font-cute text-xs px-3 py-1 rounded-full bg-sun text-bark font-bold">ADOPTION PAPERS</div>
+        <h2 class="font-display text-4xl sm:text-5xl text-gold mt-2 mb-4">Meet Sunshine</h2>
+        <p class="text-cream/95 text-lg leading-relaxed mb-4">
+          Sunshine, Vlad Tenev’s rescue Lab mix, joins the family as a six-month-old companion.
+          A yellow Lab mix with radar ears, a pink tongue, and the chill of a pup who finally found home.
+        </p>
+        <p class="text-fur text-base sm:text-lg leading-relaxed mb-5">
+          Super sweet. Very chill. Crate-trained, house-trained, and a perfect mix of zoomies and couch cuddles.
+          Now the goodest girl has a ticker: <span class="text-sun font-cute font-bold">$SUNSHINE</span> — Vlad's DogT on Solana.
+        </p>
+        <ul class="grid grid-cols-2 gap-3 font-cute text-sm">
+          <li class="flex items-center gap-2 bg-deep/40 rounded-xl px-3 py-2 border border-gold/20"><span>🐾</span> Lab mix rescue</li>
+          <li class="flex items-center gap-2 bg-deep/40 rounded-xl px-3 py-2 border border-gold/20"><span>☀</span> 6 months old</li>
+          <li class="flex items-center gap-2 bg-deep/40 rounded-xl px-3 py-2 border border-gold/20"><span>🏠</span> Forever family</li>
+          <li class="flex items-center gap-2 bg-deep/40 rounded-xl px-3 py-2 border border-gold/20"><span>◎</span> Lives on Solana</li>
+        </ul>
+      </div>
+
+      <div class="order-1 md:order-2 flex justify-center">
+        <div class="relative">
+          <img src="logo.png" alt="Sunshine portrait" class="w-64 h-64 sm:w-80 sm:h-80 object-cover rounded-[2.5rem] sun-ring rotate-2" />
+          <div class="absolute -bottom-4 -left-3 bg-blush text-bark font-cute font-bold text-xs px-3 py-2 rounded-xl wiggle shadow-tag">
+            VLAD'S DOGT
+          </div>
+          <div class="absolute -top-3 -right-2 bg-leaf text-deep font-cute font-bold text-xs px-3 py-2 rounded-xl -rotate-6 shadow-tag">
+            $SUNSHINE
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="py-6">
+    <div class="max-w-6xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
+      <div class="kennel rounded-2xl p-4 text-center">
+        <p class="font-cute text-xs text-gold/80 tracking-widest mb-1">NAME</p>
+        <p class="font-display text-2xl text-cream">Vlad's DogT</p>
+      </div>
+      <div class="kennel rounded-2xl p-4 text-center">
+        <p class="font-cute text-xs text-gold/80 tracking-widest mb-1">SYMBOL</p>
+        <p class="font-display text-2xl text-sun">$SUNSHINE</p>
+      </div>
+      <div class="kennel rounded-2xl p-4 text-center">
+        <p class="font-cute text-xs text-gold/80 tracking-widest mb-1">CHAIN</p>
+        <p class="font-display text-2xl text-cream">Solana</p>
+      </div>
+      <div class="kennel rounded-2xl p-4 text-center">
+        <p class="font-cute text-xs text-gold/80 tracking-widest mb-1">STATUS</p>
+        <p class="font-display text-2xl text-leaf">Good Girl</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="bone-divider max-w-5xl mx-auto my-8"></div>
+
+  <!-- HOW TO BUY -->
+  <section id="howtobuy" class="max-w-6xl mx-auto px-4 py-14 sm:py-20">
+    <div class="text-center mb-10">
+      <p class="font-cute text-sun tracking-[0.28em] text-xs mb-2">FETCH QUEST</p>
+      <h2 class="font-display text-4xl sm:text-6xl text-gold">How to Buy $SUNSHINE</h2>
+      <p class="mt-3 text-cream/80 text-lg max-w-xl mx-auto">Four easy steps on Solana. Grab a wallet, fill the bowl, hit the trail, bring Sunshine home.</p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      <article class="kennel rounded-[1.75rem] p-5 relative hover:-translate-y-1 transition-transform">
+        <div class="tennis mb-4"><span class="relative z-10 text-xl">1</span></div>
+        <h3 class="font-cute font-bold text-sun text-lg mb-2">Grab a leash</h3>
+        <p class="text-cream/90 leading-relaxed">
+          Download <span class="text-gold font-bold">Phantom</span> or <span class="text-gold font-bold">Solflare</span>.
+          Create a Solana wallet and keep your seed phrase offline and safe.
+        </p>
+      </article>
+
+      <article class="kennel rounded-[1.75rem] p-5 relative hover:-translate-y-1 transition-transform">
+        <div class="tennis mb-4"><span class="relative z-10 text-xl">2</span></div>
+        <h3 class="font-cute font-bold text-sun text-lg mb-2">Fill the bowl</h3>
+        <p class="text-cream/90 leading-relaxed">
+          Buy <span class="text-gold font-bold">SOL</span> on an exchange, then send it to your wallet.
+          You’ll need SOL for the swap and a little extra for fees.
+        </p>
+      </article>
+
+      <article class="kennel rounded-[1.75rem] p-5 relative hover:-translate-y-1 transition-transform">
+        <div class="tennis mb-4"><span class="relative z-10 text-xl">3</span></div>
+        <h3 class="font-cute font-bold text-sun text-lg mb-2">Hit the trail</h3>
+        <p class="text-cream/90 leading-relaxed">
+          Tap <span class="text-gold font-bold">Buy Now</span> to open pump.fun swap, or paste the $SUNSHINE CA and connect your wallet.
+        </p>
+      </article>
+
+      <article class="kennel rounded-[1.75rem] p-5 relative hover:-translate-y-1 transition-transform">
+        <div class="tennis mb-4"><span class="relative z-10 text-xl">4</span></div>
+        <h3 class="font-cute font-bold text-sun text-lg mb-2">Bring her home</h3>
+        <p class="text-cream/90 leading-relaxed">
+          Swap SOL for <span class="text-gold font-bold">$SUNSHINE</span>, confirm, and you’re in the pack.
+          Welcome home, Sunshine.
+        </p>
+      </article>
+    </div>
+
+    <div class="mt-10 flex flex-col sm:flex-row gap-3 justify-center">
+      <a href="https://swap.pump.fun/?input=So11111111111111111111111111111111111111112&output=TBA" target="_blank" rel="noopener noreferrer"
+         class="btn-buy font-cute font-bold px-8 py-3.5 rounded-2xl text-center">
+        Buy $SUNSHINE Now
+      </a>
+      <a href="https://dexscreener.com/robinhood/TBA" target="_blank" rel="noopener noreferrer"
+         class="btn-chart font-cute font-bold px-8 py-3.5 rounded-2xl text-center">
+        Open Chart
+      </a>
+    </div>
+  </section>
+
+  <!-- CHART -->
+  <section id="chart" class="max-w-6xl mx-auto px-4 py-14 sm:py-16">
+    <div class="text-center mb-8">
+      <p class="font-cute text-sun tracking-[0.28em] text-xs mb-2">LIVE SNIFF</p>
+      <h2 class="font-display text-4xl sm:text-6xl text-gold">Chart</h2>
+      <p class="mt-3 text-cream/80">Dexscreener embed · $SUNSHINE</p>
+    </div>
+
+    <div class="chart-frame rounded-[1.5rem] overflow-hidden p-2 sm:p-3">
+      <div class="w-full h-[420px] sm:h-[540px] bg-deep/80 rounded-xl overflow-hidden">
+        <iframe
+          title="SUNSHINE Dexscreener chart"
+          src="https://dexscreener.com/robinhood/TBA?embed=1&theme=dark&trades=0&info=0"
+          class="w-full h-full border-0"
+          loading="lazy"
+          allow="clipboard-write"
+        ></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- PACK / COMMUNITY -->
+  <section class="max-w-6xl mx-auto px-4 py-10 sm:py-14">
+    <div class="kennel rounded-[2rem] p-8 sm:p-12 text-center relative overflow-hidden">
+      <div class="absolute -right-8 -top-8 w-40 h-40 rounded-full bg-sun/10 blur-2xl"></div>
+      <img src="logo.png" alt="" class="w-20 h-20 mx-auto rounded-full object-cover sun-ring mb-5" />
+      <h2 class="font-display text-4xl sm:text-5xl text-gold mb-3">Join the pack</h2>
+      <p class="text-cream/90 text-lg max-w-xl mx-auto mb-7">
+        Sunshine found her family. Now find yours. Bark with the pack on Telegram and X — then buy $SUNSHINE on Solana.
+      </p>
+      <div class="flex flex-wrap gap-3 justify-center items-center">
+        <a href="https://swap.pump.fun/?input=So11111111111111111111111111111111111111112&output=TBA" target="_blank" rel="noopener noreferrer"
+           class="btn-buy font-cute font-bold px-6 py-3 rounded-2xl">Buy Now</a>
+        <a href="https://t.me/VladDogSUNSHINE" target="_blank" rel="noopener noreferrer"
+           class="social-chip inline-flex items-center gap-2 font-cute font-bold px-4 py-2.5 rounded-2xl">
+          <img src="tg.png" alt="" class="w-7 h-7 object-contain" /> Telegram
+        </a>
+        <a href="https://x.com/VladDogSUNSHINE" target="_blank" rel="noopener noreferrer"
+           class="social-chip inline-flex items-center gap-2 font-cute font-bold px-4 py-2.5 rounded-2xl">
+          <img src="x.png" alt="" class="w-7 h-7 object-cover rounded-md" /> Twitter
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-gold/25 mt-8 bg-deep/70">
+    <div class="max-w-6xl mx-auto px-4 py-8 flex flex-col sm:flex-row items-center justify-between gap-5">
+      <div class="flex items-center gap-3">
+        <img src="logo.png" alt="Vlad's DogT" class="w-12 h-12 rounded-full object-cover sun-ring" />
+        <div>
+          <p class="font-display text-gold text-xl">Vlad's DogT</p>
+          <p class="font-cute text-cream/60 text-sm">$SUNSHINE · Solana</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-3">
+        <a href="https://t.me/VladDogSUNSHINE" target="_blank" rel="noopener noreferrer" class="social-chip p-1.5 rounded-full">
+          <img src="tg.png" alt="Telegram" class="w-8 h-8 object-contain" />
+        </a>
+        <a href="https://x.com/VladDogSUNSHINE" target="_blank" rel="noopener noreferrer" class="social-chip p-1.5 rounded-xl">
+          <img src="x.png" alt="X" class="w-8 h-8 object-cover rounded-lg" />
+        </a>
+      </div>
+      <p class="text-cream/50 text-sm text-center sm:text-right font-cute">
+        NFA · DYOR · meme coin · adopt don’t shop 🐾
+      </p>
+    </div>
+    <div class="text-center py-3 font-cute text-xs tracking-widest text-gold/80" style="background: rgba(232,180,90,0.08);">
+      SUNSHINE, VLAD TENEV’S RESCUE LAB MIX, JOINS THE FAMILY AS A SIX-MONTH-OLD COMPANION
+    </div>
+  </footer>
+
+  <!-- Mobile sticky buy -->
+  <div class="sm:hidden fixed bottom-0 inset-x-0 z-40 p-3 bg-gradient-to-t from-deep via-deep/95 to-transparent">
+    <a href="https://swap.pump.fun/?input=So11111111111111111111111111111111111111112&output=TBA" target="_blank" rel="noopener noreferrer"
+       class="btn-buy font-cute font-bold w-full py-3 rounded-2xl text-center block">
+      ☀ Buy $SUNSHINE Now
+    </a>
+  </div>
+
+  <script>
+    const CA = "TBA";
+    const toast = document.getElementById("toast");
+    const copyBtn = document.getElementById("copy-ca");
+    const menuBtn = document.getElementById("menuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    function showToast(msg) {
+      toast.textContent = msg;
+      toast.classList.add("show");
+      setTimeout(() => toast.classList.remove("show"), 1800);
+    }
+
+    async function copyCA() {
+      try {
+        await navigator.clipboard.writeText(CA);
+      } catch {
+        const range = document.createRange();
+        range.selectNodeContents(document.getElementById("ca-display"));
+        const sel = window.getSelection();
+        sel.removeAllRanges();
+        sel.addRange(range);
+        document.execCommand("copy");
+        sel.removeAllRanges();
+      }
+      copyBtn.classList.add("is-copied");
+      copyBtn.textContent = "Copied!";
+      showToast("Copied to clipboard — good girl!");
+      setTimeout(() => {
+        copyBtn.classList.remove("is-copied");
+        copyBtn.textContent = "Copy CA";
+      }, 1600);
+    }
+
+    copyBtn.addEventListener("click", copyCA);
+
+    menuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+    mobileMenu.querySelectorAll("a").forEach((a) => {
+      a.addEventListener("click", () => mobileMenu.classList.add("hidden"));
+    });
+
+    const leaves = document.getElementById("leaves");
+    const leafChars = ["🍂", "🍃", "🌿"];
+    if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      for (let i = 0; i < 12; i++) {
+        const el = document.createElement("div");
+        el.className = "leaf";
+        el.textContent = leafChars[i % leafChars.length];
+        el.style.left = Math.random() * 100 + "vw";
+        el.style.animationDuration = 9 + Math.random() * 12 + "s";
+        el.style.animationDelay = Math.random() * 8 + "s";
+        el.style.fontSize = 14 + Math.random() * 12 + "px";
+        leaves.appendChild(el);
+      }
+
+      const flies = document.getElementById("fireflies");
+      for (let i = 0; i < 10; i++) {
+        const f = document.createElement("div");
+        f.className = "firefly";
+        f.style.left = 8 + Math.random() * 84 + "vw";
+        f.style.top = 15 + Math.random() * 70 + "vh";
+        f.style.animationDelay = Math.random() * 3 + "s";
+        f.style.animationDuration = 2.6 + Math.random() * 2.4 + "s";
+        flies.appendChild(f);
+      }
+    }
+  </script>
+</body>
+</html>
